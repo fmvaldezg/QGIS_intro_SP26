@@ -1,74 +1,55 @@
 ---
-# try also 'default' to start simple
-theme: default
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
+theme: seriph
 background: /assets/AdobeStock_263911828.jpeg
-# some information about your slides (markdown enabled)
 title: Introduction to QGIS - Spring 2026
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply UnoCSS classes to the current slide
 class: text-center
-# https://sli.dev/features/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
-# duration of the presentation
 duration: 55min
 ---
 
 # Introduction to QGIS
 
-Open Source Geographic Information System
+Open Source Geographic Information System\
+<br>
+Felipe Valdez\
+felipe.valdez@temple.edu\
+<br>
+January 2026
 
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
 
 <div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
+  <a href="https://charlesstudy.temple.edu/calendar/workshops?&t=g&d=0000-00-00&cal%5B%5D=6197&ct%5B%5D=69157" title="More Workshops" target="_blank" class="slidev-icon-btn">
+    <carbon:information />
   </a>
 </div>
+
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
 -->
 
 ---
-transition: slide-up
+layout: default
 ---
 
 # Workshop contents
 
-
 - 📝 **GIS basic concepts** - spatial data types, layers and overlay, attributes, coordinate systems
-- 🎨 **QGIS interface** - 
-- 🧑‍💻 **Data Loading** - 
-- 🤹 **Hands on exercise** - 
-- 💾 **Exporting a map** - 
+- 🎨 **QGIS interface** - panels, toolbars, data source manager
+- 🧑‍💻 **Data Loading** - raster & vector
+- 🤹 **Hands on exercise** - load data, attribute table, overlay, styling
+- 💾 **Exporting a map** - print layout
 - 🏁 **Wrap-up** - questions and upcoming workshops
-<br>
-<br>
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
+
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-image: linear-gradient(45deg, rgb(146, 176, 35) 10%, rgb(90, 151, 50) 20%);
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -129,6 +110,7 @@ is a computer system that analyzes and displays geographically referenced inform
 layout: two-cols
 layoutClass: gap-16
 level: 2
+transition: slide-up
 ---
 
 # Types of data
@@ -197,7 +179,7 @@ level: 2
 layout: image
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/QGIS_logo%2C_2017.svg/2560px-QGIS_logo%2C_2017.svg.png?20170501030013
 backgroundSize: contain
-
+transition: slide-up
 ---
 
 ---
@@ -206,74 +188,32 @@ image: /assets/qgis_intro02.png
 backgroundSize: contain
 ---
 
-## What is QGIS?
+# What is QGIS?
 is a free, open-source desktop Geographic Information System (GIS) software used to create, edit, visualize, analyze, and publish geospatial data.
 <br>
 <br>
 <br>
 <br>
-<div class="flex flex-col items-center mt-8 space-y-4">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="h-12 w-auto object-contain" alt="Microsoft">
-  
-  <div class="flex space-x-8">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1024px-Apple_logo_black.svg.png" class="h-12 w-auto object-contain" alt="Apple">
-    
-  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Linux_mascot_tux.png" class="h-12 w-auto object-contain" alt="Google">
-  </div>
-</div>
-<!--<div grid="~ cols-2 gap-2" m="t-2">-->
-
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, rgb(146, 176, 35) 10%, rgb(90, 151, 50) 20%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
 <div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
-
-</div>
-
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
 <div class="w-60 relative">
   <div class="relative w-60 h-60">
     <!-- Microsoft logo - top of triangle -->
     <img
       v-motion
       :initial="{ x: 800, y: -100, scale: 1, rotate: -50 }"
-      :enter="microsoftFinal"
+      :click-1="microsoftFinal"
       class="absolute w-16 h-16"
       src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
       alt=""
@@ -282,7 +222,7 @@ Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), t
   <img
       v-motion
       :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="appleFinal"
+      :click-1="appleFinal"
       class="absolute w-16 h-16"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1024px-Apple_logo_black.svg.png"
       alt=""
@@ -291,7 +231,7 @@ Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), t
   <img
       v-motion
       :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="linuxFinal"
+      :click-1="linuxFinal"
       class="absolute w-16 h-16"
       src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Linux_mascot_tux.png"
       alt=""
@@ -299,12 +239,13 @@ Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), t
   </div>
 
   <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
+    class="text-5xl absolute top-14 left-40 text-[#7fa728] -z-1"
     v-motion
     :initial="{ x: 0, opacity: 0}"
-    :enter="{ x: 50, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
+    :click-1="{ x: 50, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
     Multi platform
   </div>
+</div>
 </div>
 
 <script setup lang="ts">
@@ -348,191 +289,87 @@ const linuxFinal = {
 }
 </script>
 
-
-
+---
+layout: section
+transition: slide-up
 ---
 
-# $\LaTeX$
+# [Hands on](https://tuprd-my.sharepoint.com/:u:/g/personal/tuq76851_temple_edu/IQBfDC_j94lgSax1rWhFopYFAQlvp01WcDE7POio_fBUnPE?e=7JjHSm)
 
-$\LaTeX$ is supported out-of-box. Powered by [$\KaTeX$](https://katex.org/).
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, rgb(146, 176, 35) 10%, rgb(90, 151, 50) 20%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
 
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
+--- 
+layout: image-right
+transition: slide-up
+image: ./assets/result.png
+backgroundSize: contain
 ---
 
-# Diagrams
+# Workflow
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
----
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
----
-
-# Draggable Elements
-
-Double-click on the draggable elements to edit their positions.
-
+1. Open QGIS
+2. Start a new project
+3. Load data to the project (raster & vector)
+4. Explore data attributes
+5. Style layers
+6. Export map
 <br>
-
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
 <br>
+# Data sources:
+- [OpenDataPhilly](https://opendataphilly.org/)
+- [Temple Open Data](https://temple.maps.arcgis.com/home/index.html)
 
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="663,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, rgb(146, 176, 35) 10%, rgb(90, 151, 50) 20%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
 
 ---
-src: ./pages/imported-slides.md
-hide: false
----
+layout: image
+image: ./assets/result.png
+backgroundSize: contain
+--- 
 
 ---
+layout: image
+transition: slide-up
+image: https://tuprd.sharepoint.com/:i:/r/sites/MappingWorkshopsSeries/Shared%20Documents/Promotional%20Materials/Mapping%20workshop%20promo/Spring%202026/2026_Spring_mappingpromo_slides/2026Spring_0_workshoppromo.png?csf=1&web=1&e=dTgubq
+--- 
 
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
-
----
-layout: center
-class: text-center
+--- 
+layout: end
 ---
 
-# Learn More
+Contact us at:\
+felipe.valdez@temple.edu \
+<br>
+Visit our guides:\
+https://guides.temple.edu/gis-mapping
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+<style>
+.slidev-layout.end {
+  background: linear-gradient(135deg, rgb(164, 30, 53) 0%, rgb(149, 56, 71) 100%);
+}
+</style>
 
-<PoweredBySlidev mt-10 />
+
+
