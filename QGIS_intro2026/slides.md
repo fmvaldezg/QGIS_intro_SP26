@@ -352,7 +352,7 @@ backgroundSize: contain
 ---
 layout: image
 transition: slide-up
-image: https://tuprd.sharepoint.com/:i:/r/sites/MappingWorkshopsSeries/Shared%20Documents/Promotional%20Materials/Mapping%20workshop%20promo/Spring%202026/2026_Spring_mappingpromo_slides/2026Spring_0_workshoppromo.png?csf=1&web=1&e=dTgubq
+image: /assets/workshoppromo.png
 --- 
 
 --- 
