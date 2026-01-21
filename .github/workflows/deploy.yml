@@ -24,8 +24,21 @@ jobs:
       run: npm run build
       working-directory: ./QGIS_intro2026
       
+    - name: Debug - List built files  # Add this step
+      run: ls -la ./QGIS_intro2026/dist
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: ./QGIS_intro2026/dist
+      
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./QGIS_intro2026/dist
+
+
+
+
+
