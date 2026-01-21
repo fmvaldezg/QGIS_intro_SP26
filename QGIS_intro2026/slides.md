@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: /assets/AdobeStock_263911828.jpeg
+background: ./assets/AdobeStock_263911828.jpeg
 title: Introduction to QGIS - Spring 2026
 class: text-center
 drawings:
@@ -184,7 +184,7 @@ transition: slide-up
 
 ---
 layout: image-right
-image: /assets/qgis_intro02.png
+image: ./assets/qgis_intro02.png
 backgroundSize: contain
 ---
 
