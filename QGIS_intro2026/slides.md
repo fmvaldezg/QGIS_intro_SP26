@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: ./assets/AdobeStock_263911828.jpeg
+background: /assets/AdobeStock_263911828.jpeg
 title: Introduction to QGIS - Spring 2026
 class: text-center
 drawings:
@@ -103,7 +103,7 @@ is a computer system that analyzes and displays geographically referenced inform
 ::right::
 
 <div class="h-full flex flex-col justify-center">
-  <img src="./assets/gis_intro01.jpeg" />
+  <img src="/assets/gis_intro01.jpeg" />
 </div>
 
 ---
@@ -184,7 +184,7 @@ transition: slide-up
 
 ---
 layout: image-right
-image: ./assets/qgis_intro02.png
+image: /assets/qgis_intro02.png
 backgroundSize: contain
 ---
 
@@ -312,7 +312,7 @@ h1 {
 --- 
 layout: image-right
 transition: slide-up
-image: ./assets/result.png
+image: /assets/result.png
 backgroundSize: contain
 ---
 
@@ -345,7 +345,7 @@ h1 {
 
 ---
 layout: image
-image: ./assets/result.png
+image: /assets/result.png
 backgroundSize: contain
 --- 
 
