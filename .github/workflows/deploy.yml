@@ -45,6 +45,12 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./QGIS_intro2026/dist
+
+    - name: Debug - List all built files including assets
+      run: find ./QGIS_intro2026/dist -type f -name "*.jpeg" -o -name "*.jpg" -o -name "*.png"
+  
+    - name: Debug - Show dist structure
+      run: ls -la ./QGIS_intro2026/dist/assets/
   
   deploy:
     environment:
