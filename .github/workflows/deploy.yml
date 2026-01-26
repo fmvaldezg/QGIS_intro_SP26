@@ -37,19 +37,40 @@ jobs:
 
     - name: Add Google Analytics
       run: |
-        ANALYTICS='<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC52W8J799"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RC52W8J799");</script>'
-        sed -i "s#</head>#${ANALYTICS}</head>#" ./QGIS_intro2026/dist/index.html
-      
-    - name: Debug - List built files
-      run: ls -la ./QGIS_intro2026/dist
-      
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-      
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./QGIS_intro2026/dist
+        python3 << 'PYTHON_SCRIPT'
+        import re
+        
+        analytics_code = '''<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC52W8J799"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RC52W8J799');
+        </script>
+        '''
+        
+        with open('./QGIS_intro2026/dist/index.html', 'r') as f:
+            content = f.read()
+        
+        # Insert before </head>
+        content = content.replace('</head>', analytics_code + '</head>')
+        
+        with open('./QGIS_intro2026/dist/index.html', 'w') as f:
+            f.write(content)
+        
+        print("Analytics code added successfully")
+        PYTHON_SCRIPT
+          
+        - name: Debug - List built files
+          run: ls -la ./QGIS_intro2026/dist
+          
+        - name: Setup Pages
+          uses: actions/configure-pages@v4
+          
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: ./QGIS_intro2026/dist
 
     - name: Debug - List all built files including assets
       run: find ./QGIS_intro2026/dist -type f -name "*.jpeg" -o -name "*.jpg" -o -name "*.png"
