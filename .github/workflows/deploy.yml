@@ -62,20 +62,20 @@ jobs:
     - name: Debug - Verify Analytics was added
       run: |
         echo "Checking for gtag in index.html:"
-        grep -c "gtag" ./QGIS_intro2026/dist/index.html || echo "NOT FOUND"
+        grep "gtag" ./QGIS_intro2026/dist/index.html && echo "FOUND" || echo "NOT FOUND"
         echo "First 40 lines of index.html:"
         head -40 ./QGIS_intro2026/dist/index.html
               
-            - name: Debug - List built files
-              run: ls -la ./QGIS_intro2026/dist
-              
-            - name: Setup Pages
-              uses: actions/configure-pages@v4
-              
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                path: ./QGIS_intro2026/dist
+    - name: Debug - List built files
+      run: ls -la ./QGIS_intro2026/dist
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./QGIS_intro2026/dist
 
     - name: Debug - List all built files including assets
       run: find ./QGIS_intro2026/dist -type f -name "*.jpeg" -o -name "*.jpg" -o -name "*.png"
