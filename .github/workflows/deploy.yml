@@ -1,5 +1,4 @@
 name: Deploy Slidev to GitHub Pages
-
 on:
   push:
     branches: [ main ]
@@ -34,7 +33,7 @@ jobs:
     - name: Build
       run: npm run build
       working-directory: ./QGIS_intro2026
-
+      
     - name: Add Google Analytics
       run: |
         cat > add_analytics.py << 'EOF'
@@ -59,15 +58,15 @@ jobs:
         EOF
         python3 add_analytics.py
       
-    - name: Debug - Verify Analytics was added
+    - name: Verify Analytics in file
       run: |
-        echo "Checking for gtag in index.html:"
-        grep "gtag" ./QGIS_intro2026/dist/index.html && echo "FOUND" || echo "NOT FOUND"
-        echo "First 40 lines of index.html:"
-        head -40 ./QGIS_intro2026/dist/index.html
-              
-    - name: Debug - List built files
-      run: ls -la ./QGIS_intro2026/dist
+        if grep -q "gtag" ./QGIS_intro2026/dist/index.html; then
+          echo "✓ Analytics code found in index.html"
+          grep -A 5 "gtag" ./QGIS_intro2026/dist/index.html | head -10
+        else
+          echo "✗ Analytics code NOT found!"
+          exit 1
+        fi
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -76,12 +75,6 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./QGIS_intro2026/dist
-
-    - name: Debug - List all built files including assets
-      run: find ./QGIS_intro2026/dist -type f -name "*.jpeg" -o -name "*.jpg" -o -name "*.png"
-  
-    - name: Debug - Show dist structure
-      run: ls -la ./QGIS_intro2026/dist/assets/
   
   deploy:
     environment:
