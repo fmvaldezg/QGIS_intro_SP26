@@ -1,7 +1,7 @@
 ---
 theme: seriph
 background: /assets/AdobeStock_263911828.jpeg
-title: Introduction to QGIS - Spring 2026
+title: Introduction to QGIS - Fall 2026
 class: text-center
 drawings:
   persist: false
@@ -25,7 +25,7 @@ Open Source Geographic Information System\
 Felipe Valdez\
 felipe.valdez@temple.edu\
 <br>
-January 2026
+September 2026
 
 
 <div class="abs-br m-6 text-xl">
@@ -185,7 +185,7 @@ level: 2
 
 ---
 layout: image
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/QGIS_logo%2C_2017.svg/2560px-QGIS_logo%2C_2017.svg.png?20170501030013
+image: https://upload.wikimedia.org/wikipedia/commons/c/c2/QGIS_logo%2C_2017.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
 backgroundSize: contain
 transition: slide-up
 ---
@@ -232,7 +232,7 @@ h1 {
       :initial="{ y: 500, x: -100, scale: 2 }"
       :click-1="appleFinal"
       class="absolute w-16 h-16"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1024px-Apple_logo_black.svg.png"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/30/MacOS_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
       alt=""
   />
     
