@@ -302,7 +302,7 @@ layout: section
 transition: slide-up
 ---
 
-# [Hands on](https://tuprd-my.sharepoint.com/:u:/g/personal/tuq76851_temple_edu/IQBfDC_j94lgSax1rWhFopYFAQlvp01WcDE7POio_fBUnPE?e=7JjHSm)
+# [Hands on](https://tuprd-my.sharepoint.com/:u:/g/personal/tuq76851_temple_edu/IQBfDC_j94lgSax1rWhFopYFAY4XjQy-54I6sVbN5VNUE1c?e=Pb73Xj)
 
 <style>
 h1 {
